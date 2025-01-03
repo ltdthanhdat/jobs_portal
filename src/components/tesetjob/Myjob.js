@@ -44,8 +44,7 @@ const Myjob = ({ job }, index) => {
       setPopup({
         open: true,
         icon: "success",
-        message:
-          "You already have an accepted job. Cannot apply for another job.",
+        message: "Bạn đã có công việc được chấp nhận. Không thể ứng tuyển công việc khác.",
       });
       return;
     }
@@ -120,19 +119,19 @@ const Myjob = ({ job }, index) => {
     let daysAgo = Math.floor((new Date() - date) / (1000 * 3600 * 24));
 
     if (daysAgo < 1) {
-      return "Today";
+      return "Hôm nay";
     } else if (daysAgo < 2) {
-      return daysAgo + " day ago";
+      return daysAgo + " ngày trước";
     } else if (daysAgo < 7) {
-      return daysAgo + " days ago";
+      return daysAgo + " ngày trước";
     } else if (daysAgo < 14) {
-      return "1 week ago";
+      return "1 tuần trước";
     } else if (daysAgo < 30) {
-      return Math.floor(daysAgo / 7) + " weeks ago";
+      return Math.floor(daysAgo / 7) + " tuần trước";
     } else if (daysAgo < 60) {
-      return "1 month ago";
+      return "1 tháng trước";
     } else {
-      return Math.floor(daysAgo / 30) + " months ago";
+      return Math.floor(daysAgo / 30) + " tháng trước";
     }
   }
   return (
@@ -156,7 +155,7 @@ const Myjob = ({ job }, index) => {
               {job.title}
             </p>
             <p className="text-md text-gray-600">
-              Posted By : {job.recruiter.name}
+              Đăng bởi : {job.recruiter.name}
             </p>
           </div>
         </div>
@@ -190,9 +189,9 @@ const Myjob = ({ job }, index) => {
             className="text-xl text-orange-400 mr-3.5 ml-1"
           />
           <span className="text-base font-semibold tracking-wide">
-            Duration:{" "}
+            Thời hạn:{" "}
             <span className="font-medium text-xl">
-              {job.duration !== 0 ? `${job.duration} month` : `Flexible`}
+              {job.duration !== 0 ? `${job.duration} tháng` : `Linh hoạt`}
             </span>
           </span>
         </p>
@@ -202,7 +201,7 @@ const Myjob = ({ job }, index) => {
             className="text-xl text-orange-400 mr-3.5 ml-1"
           />
           <span className="text-base font-semibold tracking-wide">
-            Location:{" "}
+            Địa điểm:{" "}
             <span className="font-medium text-xl">{job.location}</span>
           </span>
         </p>
@@ -213,7 +212,7 @@ const Myjob = ({ job }, index) => {
             className="text-xl text-red-500 mr-3 ml-1"
           />
           <span className="text-base font-semibold tracking-wide">
-            Date Of Posting:{" "}
+            Ngày đăng:{" "}
             <span className="font-medium text-xl">
               {calculateDays(new Date(job.dateOfPosting))}
             </span>
@@ -225,7 +224,7 @@ const Myjob = ({ job }, index) => {
             className="text-xl text-red-500 mr-2"
           />
           <span className="text-base font-semibold tracking-wide">
-            Number of Applicants:
+            Số lượng ứng viên:
             <span className="font-medium text-xl"> {job.maxApplicants}</span>
           </span>
         </p>
@@ -235,7 +234,7 @@ const Myjob = ({ job }, index) => {
             className="text-xl text-red-500 mr-2"
           />
           <span className="text-base font-semibold tracking-wide">
-            Remaining Number of Positions:{" "}
+            Số vị trí còn lại:{" "}
             <span className="font-medium text-xl">
               {job.maxPositions - job.acceptedCandidates}
             </span>
@@ -249,7 +248,7 @@ const Myjob = ({ job }, index) => {
                 className="text-xl text-red-500 mr-3 ml-2"
               />
               <span className="text-base font-semibold tracking-wide">
-                Skill:{" "}
+                Kỹ năng:{" "}
               </span>
               <div className="pl-1 flex mt-3 gap-2">
                 {job.skillsets
@@ -285,11 +284,11 @@ const Myjob = ({ job }, index) => {
                         hasAcceptedJob ? "You already have an accepted job" : ""
                       }
                     >
-                      {hasAcceptedJob ? "Job accepted!" : "Apply"}
+                      {hasAcceptedJob ? "Đã nhận việc!" : "Ứng tuyển"}
                     </Link>
                   ) : (
                     <p className="text-md justify-center px-8 py-3 bg-gray-400 rounded-xl cursor-not-allowed text-black">
-                      Position Filled
+                      Đã hết vị trí
                     </p>
                   )}
                 </>
@@ -300,7 +299,7 @@ const Myjob = ({ job }, index) => {
             className="ml-2 font-semibold mr-2 cursor-pointer border-b-2 border-black bg-gray-100 hover:bg-gray-200 ease-out duration-300 px-3 py-3 rounded-xl border-none"
             to={`/jobs/${job._id}`}
           >
-            About the job
+            Chi tiết công việc
           </Link>
         </div>
       </div>

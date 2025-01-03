@@ -47,7 +47,7 @@ const ApplicationTile = (props) => {
           setPopup({
             open: true,
             icon: "success",
-            message: "Download file PDF successfully",
+            message: "Tải file PDF thành công",
           });
         })
         .catch((error) => {
@@ -55,14 +55,14 @@ const ApplicationTile = (props) => {
           setPopup({
             open: true,
             icon: "error",
-            message: "Error",
+            message: "Đã xảy ra lỗi",
           });
         });
     } else {
       setPopup({
         open: true,
         icon: "error",
-        message: "No resume found",
+        message: "Không tìm thấy CV",
       });
     }
   };
@@ -113,7 +113,7 @@ const ApplicationTile = (props) => {
             }}
             onClick={() => updateStatus("shortlisted")}
           >
-            Shortlist
+            Sơ loại
           </button>
         </div>
         <div>
@@ -125,7 +125,7 @@ const ApplicationTile = (props) => {
             }}
             onClick={() => updateStatus("shortlisted")}
           >
-            Reject
+            Từ chối
           </button>
         </div>
       </div>
@@ -141,7 +141,7 @@ const ApplicationTile = (props) => {
             }}
             onClick={() => updateStatus("accepted")}
           >
-            Accept
+            Chấp nhận
           </button>
         </div>
         <div>
@@ -153,7 +153,7 @@ const ApplicationTile = (props) => {
             }}
             onClick={() => updateStatus("rejected")}
           >
-            Reject
+            Từ chối
           </button>
         </div>
       </div>
@@ -168,22 +168,22 @@ const ApplicationTile = (props) => {
               color: "#ffffff",
             }}
           >
-            Rejected
+            Đã từ chối
           </button>
         </div>
       </div>
     ),
     accepted: (
-      <div className="w-[5.75rem] py-4 whitespace-nowrap text-sm text-gray-500 flex flex-col gap-2">
+      <div className="w-[9rem] py-4 whitespace-nowrap text-sm text-gray-500 flex justify-center">
         <div>
           <button
-            className="w-full h-full flex items-center justify-center uppercase font-semibold rounded-md"
+            className="w-full h-full flex items-center justify-center uppercase font-semibold rounded-md px-4 py-2"
             style={{
               background: colorSet["accepted"],
               color: "#ffffff",
             }}
           >
-            Accepted
+            Đã chấp nhận
           </button>
         </div>
       </div>
@@ -198,7 +198,7 @@ const ApplicationTile = (props) => {
               color: "#ffffff",
             }}
           >
-            Cancelled
+            Đã hủy
           </button>
         </div>
       </div>
@@ -213,7 +213,7 @@ const ApplicationTile = (props) => {
               color: "#ffffff",
             }}
           >
-            Finished
+            Hoàn thành
           </button>
         </button>
       </div>
@@ -244,25 +244,25 @@ const ApplicationTile = (props) => {
           />
         </div>
         <div>
-          Applied On:{" "}
+          Ngày nộp:{" "}
           <span className="font-semibold">
             {appliedOn.toLocaleDateString()}
           </span>
         </div>
         <div>
-          Education:{" "}
+          Học vấn:{" "}
           <span className="font-semibold">
             {application.jobApplicant.education
               .map((edu) => {
                 return `${edu.institutionName} (${edu.startYear}-${
-                  edu.endYear ? edu.endYear : "Ongoing"
+                  edu.endYear ? edu.endYear : "Đang học"
                 })`;
               })
               .join(", ")}
           </span>
         </div>
         <div className="mt-2">
-          <td className="text-bold">Skills:</td>
+          <td className="text-bold">Kỹ năng:</td>
           <td className="text-right">
             <div className="flex flex-row-reverse gap-1">
               {application.jobApplicant.skills.map((tag, index) => (
@@ -278,17 +278,17 @@ const ApplicationTile = (props) => {
           </td>
         </div>
       </td>
-      <td className="px-6 py-4 w-[20%] whitespace-nowrap text-sm text-gray-500">
-        <div>
+      <td className="px-6 py-4 w-[25%] whitespace-nowrap text-sm text-gray-500">
+        <div className="flex flex-col items-center justify-center">
           <button
-            className="w-full h-full flex items-center justify-center uppercase bg-gray-400 opacity-80 text-white font-semibold rounded-md"
+            className="w-[9rem] h-full flex items-center justify-center uppercase bg-gray-400 opacity-80 text-white font-semibold rounded-md px-4 py-2 mb-2"
             onClick={() => getResume()}
           >
-            Download Resume
+            Tải CV
           </button>
-        </div>
-        <div className="flex container rounded-md">
-          {buttonSet[application.status]}
+          <div className="flex container rounded-md">
+            {buttonSet[application.status]}
+          </div>
         </div>
       </td>
       {/* <Modal>

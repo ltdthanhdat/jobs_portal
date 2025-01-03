@@ -116,10 +116,10 @@ export default function SignIn({ login }) {
       <div className="min-h-screen bg-[#f8e5d4] md:pt-24 pt-12">
         <div className="bg-white rounded-2xl pt-10 md:px-8 px-6 pb-8 text-left md:w-4/12 w-11/12 mx-auto">
           <h2 className="text-4xl font-semibold text-gray-900 leading-none">
-            Sign in
+            Đăng nhập
           </h2>
           <p className="text-md text-gray-600 pb-8">
-            Please enter your details below to sign in.
+            Vui lòng nhập thông tin đăng nhập của bạn.
           </p>
 
           <InputField
@@ -133,7 +133,7 @@ export default function SignIn({ login }) {
             placeholder="email@example.com"
             onBlur={(e) => {
               if (e.target.value === "") {
-                handleInputError("email", true, "Email is required!");
+                handleInputError("email", true, "Email là bắt buộc!");
               } else {
                 handleInputError("email", false, "");
               }
@@ -142,14 +142,14 @@ export default function SignIn({ login }) {
 
           <InputField
             type="password"
-            label="Password"
+            label="Mật khẩu"
             value={loginDetails.password}
             error={inputErrorHandler.password.message}
             onChange={(e) => handleInput("password", e.target.value)}
             placeholder="**********"
             onBlur={(e) => {
               if (e.target.value === "") {
-                handleInputError("password", true, "Password is required!");
+                handleInputError("password", true, "Mật khẩu là bắt buộc!");
               } else {
                 handleInputError("password", false, "");
               }
@@ -168,7 +168,7 @@ export default function SignIn({ login }) {
                 : "bg-yellow-100 text-yellow-800 cursor-not-allowed border-yellow-100"
             }`}
           >
-            Sign in
+            Đăng nhập
           </button>
 
           <Link
@@ -176,7 +176,7 @@ export default function SignIn({ login }) {
           hover:text-[#91b4bd]"
             to="/sign-in/forgot-password"
           >
-            Forgot your password?
+            Quên mật khẩu?
           </Link>
         </div>
       </div>

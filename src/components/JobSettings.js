@@ -66,14 +66,14 @@ export default function JobSettings({ props }) {
   };
 
   if (jobs == null) {
-    return <h1>Loding...</h1>;
+    return <h1>Đang tải...</h1>;
   }
 
   return (
     <>
       <div className="mt-12">
         {/* <label className="block mb-6 text-sm font-medium text-gray-700">
-          Job status
+          Trạng thái công việc
         </label>
         <JobStatus job={job} id={id} /> */}
 
@@ -81,10 +81,10 @@ export default function JobSettings({ props }) {
           className="mt-12 w-60 text-center transform hover:-translate-y-1 hover:shadow-lg cursor-pointer font-bold text-md px-8 py-3 bg-red-400 rounded-xl text-white"
           onClick={() => setIsOpen(true)}
         >
-          Delete job
+          Xóa công việc
         </button>
         <div className="pt-2">
-          <span className="text-gray-400">You can remove the job here.</span>
+          <span className="text-gray-400">Bạn có thể xóa công việc tại đây.</span>
         </div>
       </div>
 
@@ -127,12 +127,11 @@ export default function JobSettings({ props }) {
                   as="h3"
                   className="text-lg font-medium leading-6 text-gray-900"
                 >
-                  Are you sure?
+                  Bạn có chắc chắn?
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    Are you sure you want to delete this job? All of the
-                    candidates that has been referred will be deleted as well.
+                    Bạn có chắc chắn muốn xóa công việc này? Tất cả các ứng viên đã được giới thiệu cũng sẽ bị xóa.
                   </p>
                 </div>
 
@@ -142,7 +141,7 @@ export default function JobSettings({ props }) {
                     className="mr-3 inline-flex justify-center px-4 py-2 text-sm font-medium text-red-900 bg-red-300 border border-transparent rounded-md hover:bg-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                     onClick={() => handleDelete()}
                   >
-                    Delete
+                    Xóa
                   </button>
 
                   <button
@@ -150,7 +149,7 @@ export default function JobSettings({ props }) {
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                     onClick={() => setIsOpen(false)}
                   >
-                    Cancel
+                    Hủy
                   </button>
                 </div>
               </div>

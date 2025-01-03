@@ -134,11 +134,10 @@ export default function CompanySettings({ profile, user }) {
   return (
     <div className="p-4 bg-white rounded-xl shadow-lg">
       <h3 className="text-2xl font-medium leading-6 text-gray-900">
-        Edit public profile
+        Chỉnh sửa hồ sơ công khai
       </h3>
       <p className="mt-1 text-sm text-gray-600">
-        This information will be displayed publicly so be careful what you
-        share.
+        Thông tin này sẽ được hiển thị công khai nên hãy cẩn thận với những gì bạn chia sẻ.
       </p>
       <div className="flex mb-12 gap-3 relative mt-12">
         <div>
@@ -169,7 +168,7 @@ export default function CompanySettings({ profile, user }) {
               onSubmit={uploadFile}
               className="hover:opacity-80  cursor-pointer items-center font-semibold text-md justify-center px-8 py-3 bg-primary rounded-xl text-black"
             >
-              Upload
+              Tải lên
             </button>
           </form>
         </div>
@@ -178,7 +177,7 @@ export default function CompanySettings({ profile, user }) {
       <div className="grid grid-cols-4 gap-4 mt-6">
         <InputField
           className="col-span-2"
-          label="Name"
+          label="Tên"
           type="text"
           value={profileDetails?.name}
           onChange={(e) =>
@@ -187,12 +186,12 @@ export default function CompanySettings({ profile, user }) {
               name: e.target.value,
             })
           }
-          placeholder="Enter name recruiter"
+          placeholder="Nhập tên nhà tuyển dụng"
         />
 
         <InputField
           className="col-span-2"
-          label="Contact number"
+          label="Số điện thoại"
           type="number"
           value={profileDetails?.contactNumber}
           onChange={(e) =>
@@ -201,17 +200,17 @@ export default function CompanySettings({ profile, user }) {
               contactNumber: e.target.value,
             })
           }
-          placeholder="Number phone"
+          placeholder="Số điện thoại"
         />
       </div>
 
       <label className="block text-black text-sm font-semibold mb-2">
-        About
+        Giới thiệu
       </label>
       <textarea
         className="block border border-grey-light w-full p-3 rounded mb-4 focus:ring-primary focus:border-primary"
         rows="8"
-        placeholder="Text about your company goes here."
+        placeholder="Nhập thông tin giới thiệu về công ty của bạn tại đây."
         value={profileDetails?.bio}
         onChange={(e) =>
           setProfileDetails({
@@ -239,14 +238,14 @@ export default function CompanySettings({ profile, user }) {
           className="hover:opacity-80 flex cursor-pointer items-center font-semibold text-md justify-center px-8 py-3 bg-primary rounded-xl text-black"
           onClick={() => handleUpdate()}
         >
-          Save
+          Lưu
         </div>
 
         <div
           className="ml-2 font-semibold mr-2 cursor-pointer border-b-2 border-black bg-light px-8 py-3 rounded-xl border-none"
           onClick={() => setTmpProfile(originalProfile)}
         >
-          Cancel
+          Hủy
         </div>
       </div>
     </div>

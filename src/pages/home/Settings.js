@@ -205,14 +205,14 @@ export default function Settings() {
     <div className="bg-light py-28">
       <div className="bg-white rounded-xl p-6 pb-10 overflow-x-auto mx-auto md:w-5/12 w-11/12 relative z-0">
         <h2 className="text-4xl font-semibold text-gray-900 leading-none text-center mt-4 mb-16">
-          Settings
+          Cài đặt
         </h2>
 
         <InputField
           className="md:col-span-2 col-span-4"
-          label="Name"
+          label="Họ tên"
           type="text"
-          placeholder="Firstname Lastname"
+          placeholder="Họ và tên"
           value={profileDetails.name}
           onChange={(e) =>
             setProfileDetails({ ...profileDetails, name: e.target.value })
@@ -221,7 +221,7 @@ export default function Settings() {
         <InputField
           className="mt-8 hover:border-black"
           type="datetime-local"
-          label="Application Deadline"
+          label="Ngày sinh"
           placeholder="dd/mm/yy"
           value={toLocalTime(profileDetails.dateOfBirth)}
           onChange={(e) => {
@@ -237,7 +237,7 @@ export default function Settings() {
           <div className="flex justify-between" key={index}>
             <InputField
               type="text"
-              label={`Institution Name ${index + 1}`}
+              label={`Tên trường ${index + 1}`}
               value={edu.institutionName}
               onChange={(e) => {
                 const newEducation = [...profileDetails.education];
@@ -247,11 +247,11 @@ export default function Settings() {
                   education: newEducation,
                 }));
               }}
-              placeholder="Institution name"
+              placeholder="Tên trường"
             />
             <InputField
               type="number"
-              label={`Start Year ${index + 1}`}
+              label={`Năm bắt đầu ${index + 1}`}
               value={edu.startYear}
               onChange={(e) => {
                 const newEducation = [...profileDetails.education];
@@ -261,11 +261,11 @@ export default function Settings() {
                   education: newEducation,
                 }));
               }}
-              placeholder="Start year"
+              placeholder="Năm bắt đầu"
             />
             <InputField
               type="number"
-              label={`End Year ${index + 1}`}
+              label={`Năm kết thúc ${index + 1}`}
               value={edu.endYear}
               onChange={(e) => {
                 const newEducation = [...profileDetails.education];
@@ -275,7 +275,7 @@ export default function Settings() {
                   education: newEducation,
                 }));
               }}
-              placeholder="End year"
+              placeholder="Năm kết thúc"
             />
           </div>
         ))}
@@ -297,12 +297,12 @@ export default function Settings() {
               }));
             }}
           >
-            Add another institution details
+            Thêm thông tin trường học
           </button>
         </div>
         <MuiChipsInput
-          label="Skill *"
-          helperText="Please enter to add skill"
+          label="Kỹ năng *"
+          helperText="Vui lòng nhấn Enter để thêm kỹ năng"
           value={chips}
           onChange={handleChip}
           className="block border border-grey-light w-full p-3 rounded mb-4 focus:ring-primary focus:border-primary"
@@ -310,7 +310,7 @@ export default function Settings() {
 
         <div className="w-full mb-6">
           <h2 className="font-semibold text-xl py-4">
-            Avatar <span className="text-red-500">*</span>
+            Ảnh đại diện <span className="text-red-500">*</span>
           </h2>
           <div className="w-full">
             <label
@@ -318,7 +318,7 @@ export default function Settings() {
               htmlFor="file"
             >
               <div className="flex flex-col items-center justify-center">
-                Upload image
+                Tải ảnh lên
               </div>
             </label>
             <input
@@ -329,18 +329,18 @@ export default function Settings() {
               multiple
             />
             <div className="w-full">
-              <h3 className="font-medium py-4">Select image</h3>
+              <h3 className="font-medium py-4">Chọn ảnh</h3>
               <div className="flex gap-4 items-center">
                 {profileDetails.profile ? (
                   <div className="relative w-1/3 h-1/3 ">
                     <img
                       src={profileDetails.profile}
-                      alt="preview"
+                      alt="xem trước"
                       className="w-full h-full object-cover rounded-md"
                     />
                   </div>
                 ) : (
-                  <p>No images selected</p>
+                  <p>Chưa chọn ảnh nào</p>
                 )}
               </div>
             </div>
@@ -350,7 +350,7 @@ export default function Settings() {
         <div>
           <div className="w-full mb-6">
             <h2 className="font-semibold text-xl py-4">
-              Resume <span className="text-red-500">*</span>
+              Hồ sơ <span className="text-red-500">*</span>
             </h2>
             <form onSubmit={uploadResume}>
               <input
@@ -360,9 +360,9 @@ export default function Settings() {
               />
               <button
                 type="submit"
-                className="hover:opacity-80  cursor-pointer items-center font-semibold text-md justify-center px-8 py-3 bg-primary rounded-xl text-black"
+                className="hover:opacity-80 cursor-pointer items-center font-semibold text-md justify-center px-8 py-3 bg-primary rounded-xl text-black"
               >
-                Upload
+                Tải lên
               </button>
             </form>
           </div>
@@ -374,7 +374,7 @@ export default function Settings() {
             className="hover:opacity-80 flex cursor-pointer items-center font-semibold text-md justify-center px-8 py-3 bg-primary rounded-xl text-black"
             onClick={() => handleUpdate()}
           >
-            Save changes
+            Lưu thay đổi
           </button>
         </div>
       </div>

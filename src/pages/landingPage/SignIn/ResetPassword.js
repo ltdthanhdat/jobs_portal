@@ -49,21 +49,21 @@ export default function ResetPassword({ forgotPassword }) {
         setPopup({
           open: true,
           icon: "success",
-          message: "Successfully sent email",
+          message: "Đã gửi email thành công",
         });
         console.log(response);
       } else {
         setPopup({
           open: true,
           icon: "warn",
-          message: "Sent Email Fail",
+          message: "Gửi email thất bại",
         });
       }
     } catch (err) {
       setPopup({
         open: true,
         icon: "error",
-        message: err.message || "An error occurred",
+        message: err.message || "Đã xảy ra lỗi",
       });
     }
   };
@@ -72,11 +72,11 @@ export default function ResetPassword({ forgotPassword }) {
     <div className="min-h-screen bg-primary md:pt-24 pt-12">
       <div className="bg-white rounded-2xl pt-10 md:px-8 px-6 pb-8 text-left md:w-4/12 w-11/12 mx-auto">
         <h2 className="text-4xl font-semibold text-gray-900 leading-none">
-          Forgot your password?
+          Quên mật khẩu?
         </h2>
         <p className="text-md text-gray-600 pb-8">
-          Enter your email and we will send a link to you so that you can access
-          your account again.
+          Nhập email của bạn và chúng tôi sẽ gửi một liên kết để bạn có thể truy cập
+          lại tài khoản của mình.
         </p>
 
         <InputField
@@ -96,7 +96,7 @@ export default function ResetPassword({ forgotPassword }) {
           className="mt-2 w-full bg-yellow-100 text-yellow-800 hover:bg-yellow-200 border-yellow-100 font-semibold cursor-pointer px-4 py-3 rounded-lg text-sm"
           onClick={handleForgot}
         >
-          Send reset email
+          Gửi email đặt lại mật khẩu
         </button>
 
         <p className="text-xs text-center mt-6 mb-3">{message}</p>

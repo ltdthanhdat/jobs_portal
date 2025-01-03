@@ -8,22 +8,23 @@ import { userType } from "libs/isAuth";
 import { CompanyBanner } from "components/CompanyBanner";
 
 function Home() {
-  return (
-    <div>
-      {/* <Content /> */}
-      {/* <Trusted /> */}
-      <HowItWorks />
-      <JobBoard title={false} />
-      {/* <CompanyBanner type={userType} /> */}
-      {/* <SocialMedia /> */}
-      <Banner
-        title="Ready to apply job?"
-        button="Explore the job board"
-        link="/jobs"
-        type={userType}
-      />
-    </div>
-  );
+	return (
+		<div>
+			{/* <Content /> */}
+			{/* <Trusted /> */}
+			<HowItWorks />
+			<JobBoard title={false} />
+			{/* <CompanyBanner type={userType} /> */}
+			{/* <SocialMedia /> */}
+
+			<Banner
+				title="Sẵn sàng ứng tuyển công việc?"
+				button="Khám phá bảng việc làm"
+				link="/jobs"
+				type={userType}
+			/>
+		</div>
+	);
 }
 
 export default Home;

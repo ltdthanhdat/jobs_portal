@@ -4,28 +4,28 @@ import NoJobs from "components/emptyStates/NoJobs";
 import apiList from "../../libs/apiList";
 
 export default function AdminJobs() {
-  const jobs = apiList.jobs;
-  const [filteredJobs, setFilteredJobs] = useState([]);
+	const jobs = apiList.jobs;
+	const [filteredJobs, setFilteredJobs] = useState([]);
 
-  const handleSearchChange = (filteredData) => {
-    setFilteredJobs(filteredData);
-  };
+	const handleSearchChange = (filteredData) => {
+		setFilteredJobs(filteredData);
+	};
 
-  if (!jobs) {
-    return <NoJobs />;
-  }
+	if (!jobs) {
+		return <NoJobs />;
+	}
 
-  return (
-    <>
-      <div className="bg-white pb-3 ">
-        <div className="w-10/12 mx-auto mt-32 mb-56">
-          <h3 className="text-4xl mt-8" to="/admin">
-            Jobs
-          </h3>
+	return (
+		<>
+			<div className="bg-white pb-3 ">
+				<div className="w-10/12 mx-auto mt-32 mb-56">
+					<h3 className="text-4xl mt-8" to="/admin">
+						Việc làm của tôi
+					</h3>
 
-          <JobTable jobs={jobs} onChange={handleSearchChange} />
-        </div>
-      </div>
-    </>
-  );
+					<JobTable jobs={jobs} onChange={handleSearchChange} />
+				</div>
+			</div>
+		</>
+	);
 }

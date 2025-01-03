@@ -70,13 +70,13 @@ export default function Recruiter(props) {
                   className="text-blue-500 hover:opacity-60 ease-in-out duration-150 cursor-pointer ml-1"
                   onClick={handleReadMoreClick}
                 >
-                  {isExpanded ? "Read less" : "Read more"}
+                  {isExpanded ? "Thu gọn" : "Xem thêm"}
                 </span>
               </>
             ) : (
               <div className="pb-4">
                 <span className="font-bold text-lg text-red-500">
-                  Banner is not available!
+                  Chưa có thông tin giới thiệu!
                 </span>
               </div>
             )}
@@ -88,7 +88,7 @@ export default function Recruiter(props) {
                     rounded-xl text-black"
               to={`/companies/${recruiter.userId}`}
             >
-              Read more
+              Xem thêm
             </Link>
             <span className="flex justify-center items-center gap-2">
               <div className="w-6 h-6 bg-green-100 shadow-inner flex justify-center items-center rounded-3xl">
@@ -97,7 +97,7 @@ export default function Recruiter(props) {
                 </div>
               </div>
               <span className="text-sm font-semibold text-gray-400">
-                {filteredReferrals.length} Jobs
+                {filteredReferrals.length} Việc làm
               </span>
             </span>
           </div>

@@ -23,7 +23,7 @@ const modules = {
 function WaitingBtn() {
   return (
     <div className="cursor-not-allowed transform ease-in duration-100 hover:-translate-y-1 hover:shadow-lg flex ml-2 mr-2 items-center font-semibold text-md justify-center px-8 py-3 bg-gray-300 rounded-xl text-black">
-      Waiting for responses
+      Đang chờ phản hồi
     </div>
   );
 }
@@ -194,7 +194,7 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8"
               type="text"
-              label="Job Title"
+              label="Tiêu đề công việc"
               value={jobs.title}
               onChange={(e) => {
                 setJobs({
@@ -202,12 +202,12 @@ export default function JobEditor({ jobToEdit, props }) {
                   title: e.target.value,
                 });
               }}
-              placeholder="Title"
+              placeholder="Tiêu đề"
             />
             <InputField
               className="mt-8 hover:border-black"
               type="number"
-              label="salary Reward"
+              label="Mức lương"
               placeholder="..."
               value={jobs.salary}
               onChange={(e) => {
@@ -220,8 +220,8 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8 hover:border-black"
               type="text"
-              label="Job type"
-              placeholder="25 000"
+              label="Loại công việc"
+              placeholder="Toàn thời gian"
               value={jobs.jobType}
               onChange={(e) => {
                 setJobs({
@@ -233,8 +233,8 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8 hover:border-black"
               type="text"
-              label="duration"
-              placeholder="25 000"
+              label="Thời hạn"
+              placeholder="Thời hạn"
               value={jobs.duration}
               onChange={(e) => {
                 setJobs({
@@ -246,8 +246,8 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8 hover:border-black"
               type="text"
-              label="location"
-              placeholder="TP.Ho Chi Minh"
+              label="Địa điểm"
+              placeholder="TP.Hồ Chí Minh"
               value={jobs.location}
               onChange={(e) => {
                 setJobs({
@@ -259,7 +259,7 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8 hover:border-black"
               type="datetime-local"
-              label="Application Deadline"
+              label="Hạn nộp hồ sơ"
               placeholder="dd/mm/yy"
               value={jobs.deadline}
               onChange={(e) => {
@@ -272,7 +272,7 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8 hover:border-black"
               type="number"
-              label="Maximum Number Of Applicants"
+              label="Số lượng ứng viên tối đa"
               placeholder="100"
               value={jobs.maxApplicants}
               onChange={(e) => {
@@ -285,7 +285,7 @@ export default function JobEditor({ jobToEdit, props }) {
             <InputField
               className="mt-8 hover:border-black"
               type="number"
-              label="Positions Available"
+              label="Số lượng vị trí cần tuyển"
               placeholder="20"
               value={jobs.maxPositions}
               onChange={(e) => {
@@ -297,7 +297,7 @@ export default function JobEditor({ jobToEdit, props }) {
             />
             <div className="pb-4">
               <label className="block text-black text-sm font-semibold mb-2">
-                Skills <span className="text-[#ff3131]">*</span>
+                Kỹ năng <span className="text-[#ff3131]">*</span>
               </label>
               <MuiChipsInput
                 value={tags}
@@ -309,7 +309,7 @@ export default function JobEditor({ jobToEdit, props }) {
               />
             </div>
             <label className="block text-sm font-medium text-gray-700 mt-6 mb-2">
-              Job description
+              Mô tả công việc
             </label>
 
             <ReactQuill
@@ -336,7 +336,7 @@ export default function JobEditor({ jobToEdit, props }) {
             className="text-center transform hover:-translate-y-1 hover:shadow-lg cursor-pointer font-bold text-md px-8 py-3 bg-primary rounded-xl text-black"
             onClick={() => handleJobUpdate()}
           >
-            Save
+            Lưu
           </button>
         ) : (
           <WaitingBtn />
@@ -346,7 +346,7 @@ export default function JobEditor({ jobToEdit, props }) {
           to="/admin"
           className="ml-2 font-semibold mr-2 cursor-pointer border-b-2 border-black bg-light px-8 py-3 rounded-xl border-none"
         >
-          Cancel
+          Hủy
         </Link>
       </div>
     </div>

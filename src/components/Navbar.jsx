@@ -12,150 +12,150 @@ import Blog from "./blog/Blog";
 // import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const linkUrl = useLocation();
-  // const [themeToggleDarkIcon, setThemeToggleDarkIcon] = useState(null);
-  // const [themeToggleLightIcon, setThemeToggleLightIcon] = useState(null);
+	const linkUrl = useLocation();
+	// const [themeToggleDarkIcon, setThemeToggleDarkIcon] = useState(null);
+	// const [themeToggleLightIcon, setThemeToggleLightIcon] = useState(null);
 
-  // useEffect(() => {
-  //   setThemeToggleDarkIcon(document.getElementById("theme-toggle-dark-icon"));
-  //   setThemeToggleLightIcon(document.getElementById("theme-toggle-light-icon"));
-  // }, []);
+	// useEffect(() => {
+	//   setThemeToggleDarkIcon(document.getElementById("theme-toggle-dark-icon"));
+	//   setThemeToggleLightIcon(document.getElementById("theme-toggle-light-icon"));
+	// }, []);
 
-  // useEffect(() => {
-  //   if (
-  //     localStorage.getItem("color-theme") === "dark" ||
-  //     (!("color-theme" in localStorage) &&
-  //       window.matchMedia("(prefers-color-scheme: dark)").matches)
-  //   ) {
-  //     themeToggleLightIcon?.classList?.remove("hidden");
-  //   } else {
-  //     themeToggleDarkIcon?.classList?.remove("hidden");
-  //   }
-  // }, [themeToggleDarkIcon, themeToggleLightIcon]);
+	// useEffect(() => {
+	//   if (
+	//     localStorage.getItem("color-theme") === "dark" ||
+	//     (!("color-theme" in localStorage) &&
+	//       window.matchMedia("(prefers-color-scheme: dark)").matches)
+	//   ) {
+	//     themeToggleLightIcon?.classList?.remove("hidden");
+	//   } else {
+	//     themeToggleDarkIcon?.classList?.remove("hidden");
+	//   }
+	// }, [themeToggleDarkIcon, themeToggleLightIcon]);
 
-  // const handleThemeToggle = () => {
-  //   // Toggle icons inside button
-  //   themeToggleDarkIcon?.classList?.toggle("hidden");
-  //   themeToggleLightIcon?.classList?.toggle("hidden");
+	// const handleThemeToggle = () => {
+	//   // Toggle icons inside button
+	//   themeToggleDarkIcon?.classList?.toggle("hidden");
+	//   themeToggleLightIcon?.classList?.toggle("hidden");
 
-  //   // Toggle theme
-  //   const currentTheme = localStorage.getItem("color-theme") || "light";
-  //   const newTheme = currentTheme === "light" ? "dark" : "light";
-  //   document.documentElement.classList.toggle("dark", newTheme === "dark");
-  //   localStorage.setItem("color-theme", newTheme);
-  // };
+	//   // Toggle theme
+	//   const currentTheme = localStorage.getItem("color-theme") || "light";
+	//   const newTheme = currentTheme === "light" ? "dark" : "light";
+	//   document.documentElement.classList.toggle("dark", newTheme === "dark");
+	//   localStorage.setItem("color-theme", newTheme);
+	// };
 
-  console.log(linkUrl);
+	console.log(linkUrl);
 
-  return (
-    <Disclosure as="nav" className="bg-[#FFF5EC] w-full">
-      <>
-        <div className="flex justify-between h-24 py-6 md:w-10/12 w-11/12 mx-auto">
-          {linkUrl.pathname.startsWith("/blog") && (
-            <div className="flex">
-              <Link className="flex pt-1" to="/blog">
-                <img className="md:pl-5 pl-2" src={logo} alt="logo" />
-                <h1 className="md:pl-2 pl-2 text-2xl sm:text-2xl md:text-3xl text-[#F2994A] font-medium hover:opacity-60">
-                  JobPortal
-                </h1>
-                <FontAwesomeIcon icon={faBlog} />
-              </Link>
-              <div className="flex pt-0.5 pl-8 ">
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
-                  to="/"
-                >
-                  Home
-                </Link>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
-                  to="/blog/news"
-                >
-                  News
-                </Link>
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
-                  to="/blog/programming-language"
-                >
-                  Programming Language
-                </Link>
-              </div>
-            </div>
-          )}
+	return (
+		<Disclosure as="nav" className="bg-[#FFF5EC] w-full">
+			<>
+				<div className="flex justify-between h-24 py-6 md:w-10/12 w-11/12 mx-auto">
+					{linkUrl.pathname.startsWith("/blog") && (
+						<div className="flex">
+							<Link className="flex pt-1" to="/blog">
+								<img className="md:pl-5 pl-2" src={logo} alt="logo" />
+								<h1 className="md:pl-2 pl-2 text-2xl sm:text-2xl md:text-3xl text-[#F2994A] font-medium hover:opacity-60">
+									JobPortal
+								</h1>
+								<FontAwesomeIcon icon={faBlog} />
+							</Link>
+							<div className="flex pt-0.5 pl-8 ">
+								<Link
+									className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
+									to="/"
+								>
+									Home
+								</Link>
+								<Link
+									className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
+									to="/blog/news"
+								>
+									News
+								</Link>
+								<Link
+									className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
+									to="/blog/programming-language"
+								>
+									Programming Language
+								</Link>
+							</div>
+						</div>
+					)}
 
-          {!linkUrl.pathname.startsWith("/blog") && (
-            <div className="flex">
-              <Link className="flex pt-1" to="/">
-                <img className="md:pl-5 pl-2" src={logo} alt="logo" />
-                <h1 className="md:pl-2 pl-2 text-2xl sm:text-2xl md:text-3xl text-[#F2994A] font-medium hover:opacity-60">
-                  JobPortal
-                </h1>
-              </Link>
+					{!linkUrl.pathname.startsWith("/blog") && (
+						<div className="flex">
+							<Link className="flex pt-1" to="/">
+								{/* <img className="md:pl-5 pl-2" src={logo} alt="logo" /> */}
+								<h1 className="md:pl-2 pl-2 text-2xl sm:text-2xl md:text-3xl text-[#F2994A] font-medium hover:opacity-60">
+									JobPortal
+								</h1>
+							</Link>
 
-              <div className="flex pt-0.5 pl-8">
-                {/* <HowIt /> */}
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
-                  to="/jobs"
-                >
-                  Jobs
-                </Link>
+							<div className="flex pt-0.5 pl-8">
+								{/* <HowIt /> */}
+								<Link
+									className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
+									to="/jobs"
+								>
+									Công việc
+								</Link>
 
-                <Link
-                  className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
-                  to="/companies"
-                >
-                  Companies
-                </Link>
+								<Link
+									className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
+									to="/companies"
+								>
+									Công ty
+								</Link>
 
-                {/* <Link
+								{/* <Link
                   className="lg:block hidden text-[#333333] text-lg font-semibold pl-3 pr-6 py-2 hover:opacity-60"
                   to="/leaderboard"
                 >
                   Leaderboard
                 </Link> */}
-                {/* <Blog /> */}
-              </div>
-            </div>
-          )}
+								{/* <Blog /> */}
+							</div>
+						</div>
+					)}
 
-          <div className="flex">
-            {!linkUrl.pathname.startsWith("/blog") && (
-              <>
-                <MobileMenu />
-                {isAuth() ? (
-                  <>
-                    {userType() === "recruiter" ? (
-                      <Link
-                        to="/create-new-job"
-                        className="hidden sm:flex md:flex lg:flex xl:flex 2xl:flex  hover:opacity-80 cursor-pointer items-center font-semibold text-sm justify-center px-6 bg-black rounded-lg mr-8 text-white"
-                      >
-                        <FontAwesomeIcon icon={faPlus} className="mr-3" />
-                        Create new job
-                      </Link>
-                    ) : (
-                      ""
-                    )}
+					<div className="flex">
+						{!linkUrl.pathname.startsWith("/blog") && (
+							<>
+								<MobileMenu />
+								{isAuth() ? (
+									<>
+										{userType() === "recruiter" ? (
+											<Link
+												to="/create-new-job"
+												className="hidden sm:flex md:flex lg:flex xl:flex 2xl:flex  hover:opacity-80 cursor-pointer items-center font-semibold text-sm justify-center px-6 bg-black rounded-lg mr-8 text-white"
+											>
+												<FontAwesomeIcon icon={faPlus} className="mr-3" />
+												Tạo công việc
+											</Link>
+										) : (
+											""
+										)}
 
-                    <ProfileMenu type={userType} />
-                  </>
-                ) : (
-                  <>
-                    <Link
-                      className="lg:block hidden text-black text-lg font-semibold pr-6 py-2 hover:opacity-60"
-                      to="/sign-in"
-                    >
-                      Sign in
-                    </Link>
-                    <Link
-                      className="lg:block hidden text-center transform ease-in duration-100 hover:-translate-y-1 hover:shadow-lg w-32 justify-center px-8 py-2 mb-1 bg-[#F2994A] text-white rounded-full text-lg font-semibold"
-                      to="/sign-up"
-                    >
-                      Sign up
-                    </Link>
-                  </>
-                )}
-                {/* <button
+										<ProfileMenu type={userType} />
+									</>
+								) : (
+									<>
+										<Link
+											className="lg:block hidden text-black text-lg font-semibold pr-6 py-2 hover:opacity-60"
+											to="/sign-in"
+										>
+											Sign in
+										</Link>
+										<Link
+											className="lg:block hidden text-center transform ease-in duration-100 hover:-translate-y-1 hover:shadow-lg w-32 justify-center px-8 py-2 mb-1 bg-[#F2994A] text-white rounded-full text-lg font-semibold"
+											to="/sign-up"
+										>
+											Sign up
+										</Link>
+									</>
+								)}
+								{/* <button
                   type="button"
                   onClick={handleThemeToggle}
                   className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
@@ -183,11 +183,11 @@ export default function Navbar() {
                     ></path>
                   </svg>
                 </button> */}
-              </>
-            )}
-          </div>
-        </div>
-      </>
-    </Disclosure>
-  );
+							</>
+						)}
+					</div>
+				</div>
+			</>
+		</Disclosure>
+	);
 }

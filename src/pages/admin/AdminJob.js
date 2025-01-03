@@ -113,7 +113,7 @@ export default function AdminJob() {
         setPopup({
           open: true,
           icon: "error",
-          message: "Error",
+          message: "Đã xảy ra lỗi",
         });
       });
   };
@@ -145,7 +145,7 @@ export default function AdminJob() {
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(0)}
           >
-            Referrals
+            Danh sách ứng tuyển
           </button>
 
           <button
@@ -154,7 +154,7 @@ export default function AdminJob() {
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(1)}
           >
-            Job description
+            Mô tả công việc
           </button>
 
           <button
@@ -163,7 +163,7 @@ export default function AdminJob() {
             } font-medium cursor-pointer px-4 py-4 text-sm text-gray-400`}
             onClick={() => setActive(2)}
           >
-            Job settings
+            Cài đặt
           </button>
         </div>
 

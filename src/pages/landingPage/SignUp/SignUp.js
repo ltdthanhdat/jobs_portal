@@ -373,16 +373,15 @@ export default function SignUp() {
     <div className="min-h-screen bg-[#f8e5d4] md:py-24">
       <div className="bg-white rounded-2xl pt-10 md:px-8 px-6 pb-8 text-left md:w-4/12 w-11/12 mx-auto">
         <h2 className="text-4xl font-semibold text-gray-900 leading-none">
-          Welcome to Job Portal
+          Chào mừng đến với Job Portal
         </h2>
         <p className="text-md text-gray-600 pb-8">
-          The information you add below is used to make your referrals more
-          credible and it can be edited later.
+          Thông tin bạn thêm bên dưới được sử dụng để tạo độ tin cậy cho hồ sơ và có thể chỉnh sửa sau.
         </p>
 
         <div>
           <label className="block mb-2 text-sm font-medium text-gray-900 bg-white">
-            Select a type
+            Chọn loại tài khoản
           </label>
           <select
             className="block border border-grey-light w-full p-3 rounded mb-4"
@@ -390,24 +389,24 @@ export default function SignUp() {
             onChange={handleChange}
           >
             <option value="applicant" className="rounded mb-4 text-gray-950">
-              Applicant
+              Ứng viên
             </option>
             <option value="recruiter" className="rounded mb-4 text-gray-950">
-              Recruiter
+              Nhà tuyển dụng
             </option>
           </select>
         </div>
 
         <InputField
           type="text"
-          label="Name"
+          label="Họ tên"
           value={signupDetails.name}
           error={inputErrorHandler.name.message}
           onChange={(e) => handleInput("name", e.target.value)}
-          placeholder="Firstname Lastname"
+          placeholder="Họ và tên"
           onBlur={(e) => {
             if (e.target.value === "") {
-              handleInputError("name", true, "Name is required!");
+              handleInputError("name", true, "Họ tên là bắt buộc!");
             } else {
               handleInputError("name", false, "");
             }
@@ -423,7 +422,7 @@ export default function SignUp() {
           placeholder="email@example.com"
           onBlur={(e) => {
             if (e.target.value === "") {
-              handleInputError("email", true, "Email is required!");
+              handleInputError("email", true, "Email là bắt buộc!");
             } else {
               handleInputError("email", false, "");
             }
@@ -432,20 +431,21 @@ export default function SignUp() {
         />
         <InputField
           type="password"
-          label="Password"
+          label="Mật khẩu"
           value={signupDetails.password}
           error={inputErrorHandler.password.message}
           onChange={(e) => handleInput("password", e.target.value)}
-          placeholder="Your password"
+          placeholder="Mật khẩu của bạn"
           onBlur={(e) => {
             if (e.target.value === "") {
-              handleInputError("password", true, "Password is required!");
+              handleInputError("password", true, "Mật khẩu là bắt buộc!");
             } else {
               handleInputError("password", false, "");
             }
           }}
           className="mb-4"
         />
+
         {signupDetails.type === "applicant" ? (
           <>
             {education.map((edu, index) => (
@@ -456,7 +456,7 @@ export default function SignUp() {
                     handleInputError(
                       "education",
                       true,
-                      "Education is required!"
+                      "Thông tin học vấn là bắt buộc!"
                     );
                   } else {
                     handleInputError("education", false, "");
@@ -466,38 +466,38 @@ export default function SignUp() {
                 <div className="flex justify-between" key={index}>
                   <InputField
                     type="text"
-                    label={`Institution Name ${index + 1}`}
+                    label={`Tên trường ${index + 1}`}
                     value={edu.institutionName}
                     onChange={(e) => {
                       const newEducation = [...education];
                       newEducation[index].institutionName = e.target.value;
                       setEducation(newEducation);
                     }}
-                    placeholder="Institution name"
+                    placeholder="Tên trường"
                     className="mb-1"
                   />
                   <InputField
                     type="number"
-                    label={`Start Year ${index + 1}`}
+                    label={`Năm bắt đầu ${index + 1}`}
                     value={edu.startYear}
                     onChange={(e) => {
                       const newEducation = [...education];
                       newEducation[index].startYear = e.target.value;
                       setEducation(newEducation);
                     }}
-                    placeholder="Start year"
+                    placeholder="Năm bắt đầu"
                     className="mb-1"
                   />
                   <InputField
                     type="number"
-                    label={`End Year ${index + 1}`}
+                    label={`Năm kết thúc ${index + 1}`}
                     value={edu.endYear}
                     onChange={(e) => {
                       const newEducation = [...education];
                       newEducation[index].endYear = e.target.value;
                       setEducation(newEducation);
                     }}
-                    placeholder="End year"
+                    placeholder="Năm kết thúc"
                     className="mb-1"
                   />
                 </div>
@@ -520,24 +520,22 @@ export default function SignUp() {
                   ])
                 }
               >
-                Add another institution details
+                Thêm thông tin trường học
               </button>
             </div>
 
-            <>
-              <MuiChipsInput
-                label="Skill *"
-                helperText="Please enter to add skill"
-                value={chips}
-                onChange={handleChip}
-                className="block border border-grey-light w-full p-3 rounded mb-4 focus:ring-primary focus:border-primary"
-              />
-            </>
+            <MuiChipsInput
+              label="Kỹ năng *"
+              helperText="Nhấn Enter để thêm kỹ năng"
+              value={chips}
+              onChange={handleChip}
+              className="block border border-grey-light w-full p-3 rounded mb-4"
+            />
           </>
         ) : (
           <>
             <InputField
-              label="bio (upto 250 words)"
+              label="Giới thiệu (tối đa 250 từ)"
               style={{ width: "100%" }}
               value={signupDetails.bio}
               onChange={(e) => {
@@ -552,7 +550,7 @@ export default function SignUp() {
               error={inputErrorHandler.bio.message}
               onBlur={(e) => {
                 if (e.target.value === "") {
-                  handleInputError("bio", true, "Bio is required!");
+                  handleInputError("bio", true, "Giới thiệu là bắt buộc!");
                 } else {
                   handleInputError("bio", false, "");
                 }
@@ -585,9 +583,10 @@ export default function SignUp() {
             </div>
           </>
         )}
+
         <div className="w-full mb-6">
           <h2 className="font-semibold text-xl py-4">
-            Avatar <span className="text-red-500">*</span>
+            Ảnh đại diện <span className="text-red-500">*</span>
           </h2>
           <div className="w-full">
             <label
@@ -595,7 +594,7 @@ export default function SignUp() {
               htmlFor="file"
             >
               <div className="flex flex-col items-center justify-center">
-                Upload image
+                Tải ảnh lên
               </div>
             </label>
             <input
@@ -606,7 +605,7 @@ export default function SignUp() {
               multiple
             />
             <div className="w-full">
-              <h3 className="font-medium py-4">Select image</h3>
+              <h3 className="font-medium py-4">Chọn ảnh</h3>
               <div className="flex gap-4 items-center">
                 {signupDetails.profile ? (
                   <div className="relative w-1/3 h-1/3">
@@ -621,7 +620,7 @@ export default function SignUp() {
                     />
                   </div>
                 ) : (
-                  <p>No images selected</p>
+                  <p>Chưa có ảnh nào được chọn</p>
                 )}
               </div>
             </div>
@@ -641,8 +640,7 @@ export default function SignUp() {
             }
           />
           <span className="text-sm">
-            Keep me up-to-date on exclusive Greet updates and new job posts! You
-            can opt-out at any time.
+            Cập nhật thông tin mới về Job Portal và việc làm mới! Bạn có thể hủy đăng ký bất cứ lúc nào.
           </span>
         </label>
 
@@ -664,11 +662,11 @@ export default function SignUp() {
             (signupDetails.type === "recruiter" && !allFieldsCheckedRecruiter)
           }
         >
-          Create your account
+          Tạo tài khoản
         </button>
 
         <p className="text-xs text-center mt-6">
-          By creating an account you agree to Greet's Terms and Conditions.
+          Bằng việc tạo tài khoản, bạn đồng ý với Điều khoản và Điều kiện của Job Portal.
         </p>
       </div>
     </div>

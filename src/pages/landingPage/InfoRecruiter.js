@@ -162,13 +162,13 @@ export default function InfoRecruiter() {
           <div className="grid grid-cols-3 lg:gap-14 gap-3">
             <div className="lg:col-span-2 col-span-3">
               <h1 className="text-3xl font-medium md:mt-12 mt-6 mb-3">
-                About {company?.name}
+                Về {company?.name}
               </h1>
               <p className="md:text-xl text-md">{company?.bio}</p>
             </div>
             <div className="lg:col-span-1 col-span-3">
               <h1 className="text-3xl font-medium md:mt-12 mt-4 mb-3">
-                Phone contact
+                Số điện thoại liên hệ
               </h1>
               <p className="md:text-xl text-md">{company?.contactNumber}</p>
             </div>
@@ -187,7 +187,7 @@ export default function InfoRecruiter() {
         <div className="md:w-10/12 w-11/12 mx-auto h-full md:pb-28 pb-12 pt-20 ">
           <div className="block pt-4">
             <h1 className="md:text-6xl text-4xl font-bold text-gray-900 text-center md:pb-16 pb-12">
-              Jobs at {company?.name} <span>({filterjob.length})</span>
+              Việc làm tại {company?.name} <span>({filterjob.length})</span>
             </h1>
           </div>
 
@@ -213,7 +213,7 @@ export default function InfoRecruiter() {
                             {job.title}
                           </p>
                           <p className="text-md text-gray-600">
-                            Posted By : {job.recruiter.name}
+                            Đăng bởi: {job.recruiter.name}
                           </p>
                         </div>
                       </div>
@@ -247,11 +247,11 @@ export default function InfoRecruiter() {
                           className="text-xl text-orange-400 mr-3.5 ml-1"
                         />
                         <span className="text-base font-semibold tracking-wide">
-                          Duration:{" "}
+                          Thời hạn:{" "}
                           <span className="font-medium text-xl">
                             {job.duration !== 0
-                              ? `${job.duration} month`
-                              : `Flexible`}
+                              ? `${job.duration} tháng`
+                              : `Linh hoạt`}
                           </span>
                         </span>
                       </p>
@@ -261,7 +261,7 @@ export default function InfoRecruiter() {
                           className="text-xl text-orange-400 mr-3.5 ml-1"
                         />
                         <span className="text-base font-semibold tracking-wide">
-                          Location:{" "}
+                          Địa điểm:{" "}
                           <span className="font-medium text-xl">
                             {job.location}
                           </span>
@@ -273,7 +273,7 @@ export default function InfoRecruiter() {
                           className="text-xl text-red-500 mr-3 ml-1"
                         />
                         <span className="text-base font-semibold tracking-wide">
-                          Date Of Posting:{" "}
+                          Ngày đăng:{" "}
                           <span className="font-medium text-xl">
                             {deadline}
                           </span>
@@ -285,7 +285,7 @@ export default function InfoRecruiter() {
                           className="text-xl text-red-500 mr-2"
                         />
                         <span className="text-base font-semibold tracking-wide">
-                          Number of Applicants:
+                          Số lượng ứng viên:
                           <span className="font-medium text-xl">
                             {" "}
                             {job.maxApplicants}
@@ -298,7 +298,7 @@ export default function InfoRecruiter() {
                           className="text-xl text-red-500 mr-2"
                         />
                         <span className="text-base font-semibold tracking-wide">
-                          Remaining Number of Positions:{" "}
+                          Số vị trí còn lại:{" "}
                           <span className="font-medium text-xl">
                             {job.maxPositions - job.acceptedCandidates}
                           </span>
@@ -312,7 +312,7 @@ export default function InfoRecruiter() {
                               className="text-xl text-red-500 mr-3 ml-2"
                             />
                             <span className="text-base font-semibold tracking-wide">
-                              Skill:{" "}
+                              Kỹ năng:{" "}
                             </span>
                             <div className="pl-1 flex mt-3 gap-2">
                               {job.skillsets
@@ -344,15 +344,15 @@ export default function InfoRecruiter() {
                                 onClick={() => handleApply()}
                                 title={
                                   hasAcceptedJob
-                                    ? "You already have an accepted job"
+                                    ? "Bạn đã có công việc được chấp nhận"
                                     : ""
                                 }
                               >
-                                {hasAcceptedJob ? "Job accepted!" : "Apply"}
+                                {hasAcceptedJob ? "Đã nhận việc!" : "Ứng tuyển"}
                               </Link>
                             ) : (
                               <p className="text-md justify-center px-8 py-3 bg-gray-400 rounded-xl text-black">
-                                Position Filled
+                                Đã hết vị trí
                               </p>
                             )}
                           </>
@@ -361,14 +361,14 @@ export default function InfoRecruiter() {
                           className="ml-2 font-semibold mr-2 cursor-pointer border-b-2 border-black bg-gray-100 hover:bg-gray-200 ease-out duration-300 px-3 py-3 rounded-xl border-none"
                           to={`/jobs/${job._id}`}
                         >
-                          About the job
+                          Chi tiết công việc
                         </Link>
                       </div>
                     </div>
                   );
                 })
             ) : (
-              <h5 style={{ textAlign: "center" }}>No jobs found</h5>
+              <h5 style={{ textAlign: "center" }}>Không tìm thấy việc làm</h5>
             )}
           </div>
         </div>

@@ -36,7 +36,7 @@ export default function CompanyBoard() {
       <div className="bg-light">
         <div className="md:w-10/12 w-11/12 mx-auto h-full md:pb-28 pb-12 ">
           <h1 className="md:text-6xl text-4xl font-bold text-gray-900 text-center md:pb-16 pb-12">
-            Recruiter
+            Nhà tuyển dụng
           </h1>
           <div className="grid md:grid-cols-3 md:gap-6 gap-10 grid-cols-1 ">
             {companies.length > 0 ? (

@@ -86,11 +86,8 @@ export default function ProfileMenu() {
                   </Menu.Item>
                   <Menu.Item>
                     <div className="flex items-center justify-center gap-1">
-                      <div
-                        className="relative grid select-none items-center whitespace-nowrap rounded-lg 
-                          bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white"
-                      >
-                        <span>Applicant</span>
+                      <div className="relative grid select-none items-center whitespace-nowrap rounded-lg bg-gray-900 py-1.5 px-3 font-sans text-xs font-bold uppercase text-white">
+                        <span>Candidate</span>
                       </div>
                     </div>
                   </Menu.Item>
@@ -102,7 +99,7 @@ export default function ProfileMenu() {
                       className="flex items-center text-left p-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                     >
                       <FontAwesomeIcon icon={faUsers} className="mr-3" />
-                      My referrals
+                      Công việc ứng tuyển
                     </Link>
                   </Menu.Item>
 
@@ -112,7 +109,7 @@ export default function ProfileMenu() {
                       className="flex items-center text-left p-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                     >
                       <FontAwesomeIcon icon={faCogs} className="mr-3" />
-                      Settings
+                      Cài đặt
                     </Link>
                   </Menu.Item>
                 </div>
@@ -143,11 +140,11 @@ export default function ProfileMenu() {
                       className="flex items-center text-left p-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                     >
                       <FontAwesomeIcon icon={faPoll} className="mr-3" />
-                      My jobs
+                      Việc làm của tôi
                     </Link>
                   </Menu.Item>
 
-                  <Menu.Item>
+                  {/* <Menu.Item>
                     <Link
                       to="/talent-pool"
                       className="flex items-center text-left p-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
@@ -158,7 +155,7 @@ export default function ProfileMenu() {
                       />
                       Talent pool
                     </Link>
-                  </Menu.Item>
+                  </Menu.Item> */}
 
                   <Menu.Item>
                     <Link
@@ -166,7 +163,7 @@ export default function ProfileMenu() {
                       className="flex items-center text-left p-2 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                     >
                       <FontAwesomeIcon icon={faCog} className="mr-3" />
-                      Settings
+                      Cài đặt
                     </Link>
                   </Menu.Item>
                 </div>
@@ -213,7 +210,7 @@ export default function ProfileMenu() {
                   className="flex items-center text-left p-2 w-full transition duration-150 ease-in-out rounded-lg hover:bg-gray-100 text-lg font-semibold text-gray-900"
                   onClick={() => handleClick()}
                 >
-                  Logout
+                  Đăng xuất
                 </button>
               </Menu.Item>
             </div>

@@ -17,8 +17,8 @@ export default function HowItWorks() {
     <div className="bg-white md:pt-32 pt-16">
       {type === "recruiter" ? (
         <>
-          <h1 className="md:text-6xl text-4xl font-bold text-center text-gray-900 ">
-            How <strong>JobPortal</strong> works for <strong>Recruiter</strong>
+          <h1 className="md:text-5xl text-4xl font-bold text-center text-gray-900 ">
+            <strong>JobPortal</strong> hoạt động thế nào với <strong>Nhà tuyển dụng</strong>
           </h1>
           <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-14 md:py-40 md:pb-12 py-12   md:text-left text-center md:w-10/12 w-11/12  mx-auto ">
             <div>
@@ -28,13 +28,13 @@ export default function HowItWorks() {
               />
 
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 1:
+                Bước 1:
               </div>
               <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
-                Create a profile
+                Tạo hồ sơ
               </h1>
               <p className="text-xl font-light">
-                Promote your company to our community of tech people.
+                Quảng bá công ty của bạn đến cộng đồng.
               </p>
             </div>
 
@@ -45,58 +45,55 @@ export default function HowItWorks() {
               />
 
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 2:
+                Bước 2:
               </div>
-              <h1 className="text-3xl text-gray-900 pb-3  font-semibold">
-                Post a job
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Đăng tin tuyển dụng
               </h1>
               <p className="text-xl font-light">
-                Write a job description, set a hiring reward and interview
-                reward.
+                Viết mô tả công việc, đặt mức thưởng tuyển dụng và phỏng vấn.
               </p>
             </div>
 
             <div>
               <FontAwesomeIcon
-                className="text-5xl mb-6  text-primary"
+                className="text-5xl mb-6 text-primary"
                 icon={faEnvelopeOpenText}
               />
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 3:
+                Bước 3:
               </div>
-              <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
-                Applicant apply
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Ứng viên nộp đơn
               </h1>
               <p className="text-xl font-light">
-                Our JOBPORTAL community allows users to discover and apply for
-                jobs.
+                JOBPORTAL cho phép người dùng khám phá và ứng tuyển việc làm.
               </p>
             </div>
 
             <div>
               <FontAwesomeIcon
-                className="text-5xl mb-6  text-yellow-400"
+                className="text-5xl mb-6 text-yellow-400"
                 icon={faHandsHelping}
               />
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 4:
+                Bước 4:
               </div>
-              <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
-                Interview and hire
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Phỏng vấn và tuyển dụng
               </h1>
               <p className="text-xl font-light">
-                If you find an interesting candidate you can interview and hire
-                them.
+                Nếu bạn tìm thấy ứng viên phù hợp, bạn có thể phỏng vấn và tuyển dụng họ.
               </p>
             </div>
           </div>
         </>
       ) : type === "applicant" ? (
         <>
-          <h1 className="md:text-6xl text-4xl font-bold text-center text-gray-900 ">
-            How <strong>JobPortal</strong> works for <strong>Applicants</strong>
+          <h1 className="md:text-6xl text-4xl font-bold text-center text-gray-900">
+            <strong>JobPortal</strong> hoạt động thế nào với <strong>Ứng viên</strong>
           </h1>
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-12 md:py-32 py-12  text-center md:w-10/12 w-11/12  mx-auto ">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-12 md:py-32 py-12 text-center md:w-10/12 w-11/12 mx-auto">
             <div>
               <FontAwesomeIcon
                 className="text-5xl mb-6 text-secondary"
@@ -104,13 +101,13 @@ export default function HowItWorks() {
               />
 
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 1:
+                Bước 1:
               </div>
               <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
-                Find a job
+                Tìm việc làm
               </h1>
               <p className="text-xl font-light">
-                Find exciting tech jobs on the job board.
+                Tìm kiếm công việc hấp dẫn trên bảng việc làm.
               </p>
             </div>
 
@@ -120,12 +117,14 @@ export default function HowItWorks() {
                 icon={faHandPeace}
               />
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 2:
+                Bước 2:
               </div>
-              <h1 className="text-3xl text-gray-900 pb-3  font-semibold">
-                Apply for job
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Ứng tuyển việc làm
               </h1>
-              <p className="text-xl font-light">Apply for a job you love.</p>
+              <p className="text-xl font-light">
+                Ứng tuyển vào công việc bạn yêu thích.
+              </p>
             </div>
 
             <div>
@@ -135,21 +134,21 @@ export default function HowItWorks() {
               />
 
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 3:
+                Bước 3:
               </div>
-              <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
-                Await approval
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Chờ phê duyệt
               </h1>
               <p className="text-xl font-light">
-                Waiting for your job application to be approved by the employer.
+                Chờ đơn ứng tuyển của bạn được nhà tuyển dụng phê duyệt.
               </p>
             </div>
           </div>
         </>
       ) : (
         <>
-          <h1 className="md:text-6xl text-4xl font-bold text-center text-gray-900 ">
-            How <strong>JobPortal</strong> works
+          <h1 className="md:text-6xl text-4xl font-bold text-center text-gray-900">
+            <strong>JobPortal</strong> hoạt động thế nào
           </h1>
           <div className="grid lg:grid-cols-3 grid-cols-1 gap-12 md:py-32 py-12  text-center md:w-10/12 w-11/12  mx-auto ">
             <div>
@@ -159,13 +158,13 @@ export default function HowItWorks() {
               />
 
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 1:
+                Bước 1:
               </div>
               <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
-                Create account
+                Tạo tài khoản
               </h1>
               <p className="text-xl font-light">
-                Create a user account for applicants or recruiters.
+                Tạo tài khoản cho ứng viên hoặc nhà tuyển dụng.
               </p>
             </div>
 
@@ -175,13 +174,13 @@ export default function HowItWorks() {
                 icon={faHandPeace}
               />
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 2:
+                Bước 2:
               </div>
-              <h1 className="text-3xl text-gray-900 pb-3  font-semibold">
-                Log in
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Đăng nhập
               </h1>
               <p className="text-xl font-light">
-                Log in with the account you've created.
+                Đăng nhập với tài khoản bạn đã tạo.
               </p>
             </div>
 
@@ -192,13 +191,13 @@ export default function HowItWorks() {
               />
 
               <div className="text-gray-900 text-md tracking-wide pb-2 uppercase font-semibold">
-                Step 3:
+                Bước 3:
               </div>
-              <h1 className="text-3xl  text-gray-900 pb-3 font-semibold">
-                Let the experience begin
+              <h1 className="text-3xl text-gray-900 pb-3 font-semibold">
+                Bắt đầu trải nghiệm
               </h1>
               <p className="text-xl font-light">
-                Create a job posting or find the job you desire.
+                Tạo tin tuyển dụng hoặc tìm kiếm công việc bạn mong muốn.
               </p>
             </div>
           </div>
